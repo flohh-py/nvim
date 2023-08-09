@@ -1,2 +1,1 @@
-require('configs.general')
-require('configs.whichkey')
+-- require('configs.general')
