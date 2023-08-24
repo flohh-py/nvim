@@ -81,14 +81,9 @@ require('lazy').setup({
     },
     {
         'nvim-lualine/lualine.nvim',
-        opts = {
-            options = {
-                icons_enabled = false,
-                theme = 'onedark',
-                component_separators = '|',
-                section_separators = '',
-            },
-        },
+        config = function()
+            require('configs.lualine')
+        end
     },
     {
         'lukas-reineke/indent-blankline.nvim',
