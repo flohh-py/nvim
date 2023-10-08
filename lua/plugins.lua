@@ -87,10 +87,13 @@ require('lazy').setup({
     },
     {
         'lukas-reineke/indent-blankline.nvim',
-        opts = {
-            char = '┊',
-            show_trailing_blankline_indent = false,
-        },
+        config = function()
+            require('configs.blankline')
+        end
+        -- opts = {
+        -- char = '┊',
+        -- show_trailing_blankline_indent = false,
+        -- },
     },
     {
         'numToStr/Comment.nvim',
