@@ -1,4 +1,9 @@
 local lspconfig = require('lspconfig')
+local util = require 'lspconfig/util'
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
 local on_attach = function()
     local Format = vim.api.nvim_create_augroup("Format", { clear = true })
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -8,8 +13,6 @@ local on_attach = function()
         end,
     })
 end
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require 'lspconfig'.cssls.setup {
     capabilities = capabilities,
@@ -35,19 +38,25 @@ lspconfig.lua_ls.setup {
         },
     },
 }
-
 lspconfig.pyright.setup {
     on_attach = on_attach,
     capabilities = capabilities,
     cmd = { "pyright-langserver", "--stdio" },
     filetypes = { "python" },
-    -- root_dir = util.find_git_ancestor,
+    root_dir = util.find_git_ancestor,
+    -- root_dir = function(fname)
+    --     local root_files = {
+    --         'pyproject.toml',
+    --     }
+    --     return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname)
+    -- end,
     settings = {
         python = {
             analysis = {
-                autoSearchPaths = false,
+                autoSearchPaths = true,
                 diagnosticMode = "workspace",
                 useLibraryCodeForTypes = true,
+                typeCheckingMode = "off",
             },
         },
     },

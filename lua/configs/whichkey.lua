@@ -1,24 +1,24 @@
 local wk = require("which-key")
 
 wk.register({
-        f = {
+        s = {
             name = "Files",
             f = { "<cmd>Telescope find_files<cr>", "Find File" },
-            w = { "<cmd>Telescope live_grep<cr>", "Find Word" },
-            W = {
+            t = { "<cmd>Telescope live_grep<cr>", "Search Text" },
+            T = {
                 function()
                     folders = vim.lsp.buf.list_workspace_folders()
                     require("telescope.builtin").live_grep {
                         search_dirs = folders,
                     }
                 end,
-                "Find in Workspaces",
+                "Search Text in Workspaces",
             }
         },
         g = {
             name = "Git - Docker",
             g = { "<cmd>lua LazygitToggle()<cr>", "Lazygit" },
-            d = { "<cmd>lua LazudockerToggle()<cr>", "LazyDocker" },
+            d = { "<cmd>lua LazydockerToggle()<cr>", "LazyDocker" },
         },
         e = { "<cmd>NvimTreeToggle<cr>", "NvimTree" },
         b = {
