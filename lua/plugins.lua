@@ -157,7 +157,13 @@ require('lazy').setup({
             require('illuminate').configure()
         end,
     },
-    { "natecraddock/workspaces.nvim" },
+    -- { "natecraddock/workspaces.nvim" },
+    {
+        "mfussenegger/nvim-dap",
+        config = function()
+            require('configs.dap')
+        end
+    },
 
     --- TESTING
     -- {"idanarye/nvim-buffls"},
