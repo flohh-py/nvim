@@ -30,7 +30,7 @@ wk.register({
         -- WIP
         t = {
             name = "Terminal",
-            t = { "<cmd>lua ToggleTerm<CR>", "Terminal" },
+            -- t = { "<cmd>lua ToggleTerm<CR>", "Terminal" },
             f = { "<cmd>lua TermfloatToggle()<CR>", "Terminal Float" },
         }
     },

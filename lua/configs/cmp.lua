@@ -37,7 +37,7 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ['<c-d>'] = cmp.mapping(function(fallback)
             if luasnip.jumpable(1) then
                 luasnip.jump(1)
@@ -53,25 +53,21 @@ cmp.setup({
             end
         end, { "i", "s" })
     }),
-    sources = cmp.config.sources({
-            {
-                name = 'nvim_lsp',
-                entry_filter = function(entry)
-                    return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
-                end
-            },
-            { name = 'luasnip' }, -- For luasnip users.
-        },
+    sources = {
+        { name = 'luasnip' },
+        { name = 'buffer' },
         {
-            { name = 'buffer' },
-        }
-    ),
+            name = 'nvim_lsp',
+            entry_filter = function(entry)
+                return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
+            end
+        },
+    }
 })
 
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
-            { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-        },
+            { name = 'cmp_git' }, },
         {
             { name = 'buffer' },
         })
@@ -83,12 +79,3 @@ cmp.setup.cmdline({ '/', '?' }, {
         { name = 'buffer' }
     }
 })
-
--- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('lspconfig')['pyright'].setup {
-    capabilities = capabilities
-}
-require('lspconfig')['tsserver'].setup {
-    capabilities = capabilities
-}

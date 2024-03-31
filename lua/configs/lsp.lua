@@ -1,8 +1,9 @@
 local lspconfig = require('lspconfig')
 local util = require 'lspconfig/util'
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local on_attach = function()
     local Format = vim.api.nvim_create_augroup("Format", { clear = true })
@@ -13,10 +14,6 @@ local on_attach = function()
         end,
     })
 end
-
-require 'lspconfig'.cssls.setup {
-    capabilities = capabilities,
-}
 
 lspconfig.lua_ls.setup {
     on_attach = on_attach,
