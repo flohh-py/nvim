@@ -14,6 +14,22 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     { 'tpope/vim-sleuth' },
     {
+        'williamboman/mason.nvim',
+        lazy = false,
+        config = function()
+            require('mason').setup()
+        end
+    },
+    {
+        'williamboman/mason-lspconfig.nvim',
+        lazy = false,
+        config = function()
+            require("mason-lspconfig").setup {
+                ensure_installed = { "lua_ls", "pyright", "tsserver", "lemminx", "cssls" },
+            }
+        end
+    },
+    {
         'neovim/nvim-lspconfig',
         dependencies = {
             { 'williamboman/mason.nvim',          config = true },
@@ -162,6 +178,13 @@ require('lazy').setup({
         "mfussenegger/nvim-dap",
         config = function()
             require('configs.dap')
+        end
+    },
+    {
+        'TabbyML/vim-tabby',
+        lazy = false,
+        config = function()
+            require('configs.tabby')
         end
     },
 
