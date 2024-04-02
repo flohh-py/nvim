@@ -18,6 +18,9 @@ local lazygit   = Terminal:new({
 
 local termfloat = Terminal:new({
     direction = "float",
+    float_opts = {
+        border = "double",
+    },
     on_open = function(term)
         vim.cmd("startinsert!")
         vim.api.nvim_buf_set_keymap(
