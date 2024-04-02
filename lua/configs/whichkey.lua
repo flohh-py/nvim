@@ -50,7 +50,7 @@ wk.register({
                 end,
                 "List Marks"
             },
-        }
+        },
         -- WIP
         t = {
             name = "Terminal",

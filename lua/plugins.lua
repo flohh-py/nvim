@@ -178,6 +178,7 @@ require('lazy').setup({
     {
         "ldelossa/nvim-dap-projects",
         lazy = true,
+        -- event = '',
         -- init = function()
         --     require("nvim-dap-projects")
         -- end,
