@@ -51,6 +51,12 @@ wk.register({
                 "List Marks"
             },
         },
+
+        -- WIP
+        d = {
+            name = "+ Debug",
+            s = { "<cmd>DapContinue<CR>", "Continue" },
+        },
         -- WIP
         t = {
             name = "Terminal",

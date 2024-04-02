@@ -171,8 +171,20 @@ require('lazy').setup({
     },
     {
         "mfussenegger/nvim-dap",
+        lazy = false,
         config = function()
             require('configs.dap')
+        end
+    },
+    {
+        "rcarriga/nvim-dap-ui",
+        lazy = false,
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio"
+        },
+        config = function()
+            require("dapui").setup()
         end
     },
     {
