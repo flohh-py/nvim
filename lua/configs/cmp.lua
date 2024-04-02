@@ -54,14 +54,16 @@ cmp.setup({
         end, { "i", "s" })
     }),
     sources = {
+        { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'buffer' },
-        {
-            name = 'nvim_lsp',
-            entry_filter = function(entry)
-                return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
-            end
-        },
+        { name = 'path' },
+        -- {
+        --     name = 'nvim_lsp',
+        --     entry_filter = function(entry)
+        --         return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
+        --     end
+        -- },
     }
 })
 

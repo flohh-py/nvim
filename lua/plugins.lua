@@ -87,15 +87,6 @@ require('lazy').setup({
         },
     },
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-        config = function()
-            vim.cmd [[colorscheme tokyonight-storm]]
-        end,
-    },
-    {
         'nvim-lualine/lualine.nvim',
         config = function()
             require('configs.lualine')
@@ -186,6 +177,46 @@ require('lazy').setup({
         config = function()
             require('configs.tabby')
         end
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        config = function()
+            require('configs.noice')
+        end,
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
+    {
+        "hrsh7th/cmp-cmdline",
+        lazy = true,
+        event = "InsertEnter",
+        config = function()
+            require('configs.cmdline')
+        end
+    },
+    -- THEMES
+    {
+        "EdenEast/nightfox.nvim",
+        lazy = false
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        config = function()
+            vim.cmd [[colorscheme tokyonight-storm]]
+        end,
     },
 
     --- TESTING
