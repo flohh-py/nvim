@@ -1,4 +1,6 @@
 require 'nvim-treesitter.configs'.setup {
+    ignore_install = {},
+    modules = {},
     ensure_installed = {
         "typescript",
         "javascript",

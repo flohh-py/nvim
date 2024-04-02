@@ -7,7 +7,7 @@ wk.register({
             t = { "<cmd>Telescope live_grep<cr>", "Search Text" },
             T = {
                 function()
-                    folders = vim.lsp.buf.list_workspace_folders()
+                    local folders = vim.lsp.buf.list_workspace_folders()
                     require("telescope.builtin").live_grep {
                         search_dirs = folders,
                     }
@@ -27,12 +27,39 @@ wk.register({
             c = { "<cmd>BufDel <cr>", "Close Buffer" },
             a = { "<cmd>BufDelOthers <cr>:<cr>", "Close Others Buffers" },
         },
+        h = {
+            name = "+ Harpoon",
+            a = {
+                function()
+                    local harpoon = require("harpoon")
+                    harpoon:list():append()
+                end,
+                "Add File"
+            },
+            l = {
+                function()
+                    local harpoon = require("harpoon")
+                    harpoon.ui:toggle_quick_menu(harpoon:list())
+                end,
+                "List Marks"
+            },
+            e = {
+                function()
+                    local harpoon = require("harpoon")
+                    harpoon_toggle_telescope(harpoon:list())
+                end,
+                "List Marks"
+            },
+        }
         -- WIP
         t = {
             name = "Terminal",
             -- t = { "<cmd>lua ToggleTerm<CR>", "Terminal" },
             f = { "<cmd>lua TermfloatToggle()<CR>", "Terminal Float" },
-        }
+            d = { "<cmd>lua require('nvim-dap-projects').search_project_config()<CR>", "Load Dap Projects" },
+            D = { "<cmd>lua _lazydocker_toggle()<CR>", "Lazy Docker" },
+        },
+
     },
     { prefix = "<leader>" }
 )

@@ -32,9 +32,16 @@ require('lazy').setup({
     {
         'neovim/nvim-lspconfig',
         dependencies = {
-            { 'williamboman/mason.nvim',          config = true },
+            {
+                'williamboman/mason.nvim',
+                config = true
+            },
             { 'williamboman/mason-lspconfig.nvim' },
-            { 'j-hui/fidget.nvim',                tag = 'legacy', opts = {} },
+            {
+                'j-hui/fidget.nvim',
+                tag = 'legacy',
+                opts = {}
+            },
             { 'folke/neodev.nvim' },
         },
         config = function()
@@ -65,10 +72,8 @@ require('lazy').setup({
         end
     },
     {
-        -- Adds git releated signs to the gutter, as well as utilities for managing changes
         'lewis6991/gitsigns.nvim',
         opts = {
-            -- See `:help gitsigns.txt`
             signs = {
                 add = { text = '+' },
                 change = { text = '~' },
@@ -164,13 +169,24 @@ require('lazy').setup({
             require('illuminate').configure()
         end,
     },
-    -- { "natecraddock/workspaces.nvim" },
     {
         "mfussenegger/nvim-dap",
         config = function()
             require('configs.dap')
         end
     },
+    {
+        "ldelossa/nvim-dap-projects",
+        lazy = true,
+        -- init = function()
+        --     require("nvim-dap-projects")
+        -- end,
+        config = function()
+            require("nvim-dap-projects").config_paths = { "./test/nvim-dap.lua", ".vscode/nvim-dap.lua" }
+            require("nvim-dap-projects").search_project_config()
+        end,
+    },
+
     {
         'TabbyML/vim-tabby',
         lazy = false,
@@ -185,14 +201,15 @@ require('lazy').setup({
             require('configs.noice')
         end,
         opts = {
-            -- add any options here
+            routes = {
+                {
+                    filter = { event = "notify", find = "No information available" },
+                    opts = { skip = true },
+                },
+            },
         },
         dependencies = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
             "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
             "rcarriga/nvim-notify",
         }
     },
@@ -204,22 +221,32 @@ require('lazy').setup({
             require('configs.cmdline')
         end
     },
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require('configs.harpoon')
+        end,
+    },
     -- THEMES
     {
         "EdenEast/nightfox.nvim",
-        lazy = false
+        lazy = false,
+        config = function()
+            vim.cmd [[colorscheme nightfox]]
+        end,
     },
     {
         "folke/tokyonight.nvim",
         lazy = false,
-        priority = 1000,
-        opts = {},
-        config = function()
-            vim.cmd [[colorscheme tokyonight-storm]]
-        end,
+        -- config = function()
+        --     vim.cmd [[colorscheme tokyonight-storm]]
+        -- end,
     },
 
     --- TESTING
+    -- { "natecraddock/workspaces.nvim" },
     -- {"idanarye/nvim-buffls"},
     -- {"AckslD/muren.nvim"},
     -- {
@@ -238,7 +265,5 @@ require('lazy').setup({
     --         }
     --     end
     -- },
-
     -- { 'jose-elias-alvarez/typescript.nvim' },
-    -- { 'onsails/lspkind-nvim' },
 })
