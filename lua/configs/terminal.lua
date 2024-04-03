@@ -1,6 +1,6 @@
-local Terminal   = require('toggleterm.terminal').Terminal
+local Terminal       = require('toggleterm.terminal').Terminal
 
-local lazygit    = Terminal:new({
+local lazygit        = Terminal:new({
     cmd = "lazygit",
     dir = "git_dir",
     direction = "float",
@@ -16,7 +16,7 @@ local lazygit    = Terminal:new({
     end,
 })
 
-local termfloat  = Terminal:new({
+local termfloat      = Terminal:new({
     direction = "float",
     float_opts = {
         border = "double",
@@ -33,20 +33,42 @@ local termfloat  = Terminal:new({
     end,
 })
 
+local termhorizontal = Terminal:new({
+    direction = "horizontal",
+    float_opts = {
+        border = "double",
+    },
+    on_open = function(term)
+        vim.cmd("startinsert!")
+        vim.api.nvim_buf_set_keymap(
+            term.bufnr,
+            "t",
+            "<leader>t",
+            "<cmd>close<CR>",
+            { noremap = true, silent = true }
+        )
+    end,
+})
+
 ------------------------------------
 -- LAZYDOCKER
 ------------------------------------
 
-local lazydocker = Terminal:new({
+local lazydocker     = Terminal:new({
     cmd = "lazydocker -f .",
     hidden = true,
     direction = "float",
     on_open = function(term)
         vim.cmd("startinsert!")
-        vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<esc>", "<cmd>close<CR>", { noremap = true, silent = true })
+        vim.api.nvim_buf_set_keymap(
+            term.bufnr,
+            "t",
+            "<esc>",
+            "<cmd>close<CR>",
+            { noremap = true, silent = true }
+        )
     end,
 })
-
 
 function LazydockerToggle()
     lazydocker:toggle()
@@ -54,6 +76,10 @@ end
 
 function TermfloatToggle()
     termfloat:toggle()
+end
+
+function TermhorizontalToggle()
+    termhorizontal:toggle()
 end
 
 function LazygitToggle()

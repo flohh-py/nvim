@@ -183,9 +183,12 @@ require('lazy').setup({
             "mfussenegger/nvim-dap",
             "nvim-neotest/nvim-nio"
         },
-        config = function()
-            require("dapui").setup()
-        end
+        init = function()
+            require("configs.dapui")
+        end,
+        -- config = function()
+        --     require("configs.dapui")
+        -- end
     },
     {
         "ldelossa/nvim-dap-projects",

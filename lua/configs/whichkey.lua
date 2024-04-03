@@ -55,12 +55,15 @@ wk.register({
         -- WIP
         d = {
             name = "+ Debug",
-            s = { "<cmd>DapContinue<CR>", "Continue" },
+            -- s = { "<cmd>DapContinue<CR>", "Continue" },
+            s = { "<cmd>lua DapuiScopes()<CR>", "Scopes" },
+            e = { "<cmd>lua DapuiEval()<CR>", "Eval Float" },
+            -- r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
         },
         -- WIP
         t = {
             name = "Terminal",
-            -- t = { "<cmd>lua ToggleTerm<CR>", "Terminal" },
+            t = { "<cmd>lua TermhorizontalToggle()<CR>", "Terminal" },
             f = { "<cmd>lua TermfloatToggle()<CR>", "Terminal Float" },
             D = { "<cmd>lua require('nvim-dap-projects').search_project_config()<CR>", "Load Dap Projects" },
             d = { "<cmd>lua LazydockerToggle()<CR>", "Lazy Docker" },

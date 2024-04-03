@@ -23,14 +23,3 @@ dap.adapters.python = {
     command = "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
     args = { "-m", "debugpy.adapter" },
 }
-
--- WIP
--- local autocmd = vim.api.nvim_create_autocmd
--- autocmd("Filetype", {
---     pattern = { "dap-float" },
---     command = "nnoremap <buffer><silent> q <cmd>close!<CR>",
--- })
--- autocmd("Filetype", {
---     pattern = { "dap-hover" },
---     command = "nnoremap <buffer><silent> q <cmd>close!<CR>",
--- })
