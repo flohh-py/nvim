@@ -62,13 +62,18 @@ wk.register({
         },
         -- WIP
         t = {
-            name = "Terminal",
+            name = "+ Terminal",
             t = { "<cmd>lua TermhorizontalToggle()<CR>", "Terminal" },
             f = { "<cmd>lua TermfloatToggle()<CR>", "Terminal Float" },
             D = { "<cmd>lua require('nvim-dap-projects').search_project_config()<CR>", "Load Dap Projects" },
             d = { "<cmd>lua LazydockerToggle()<CR>", "Lazy Docker" },
         },
 
+        n = {
+            name = "+ Notifications",
+            d = { "<cmd>NoiceDismis<CR>", "Dismiss Notifications" },
+            l = { "<cmd>Notifications<CR>", "Dismiss Notifications" },
+        },
     },
     { prefix = "<leader>" }
 )
