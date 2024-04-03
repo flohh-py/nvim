@@ -62,8 +62,8 @@ wk.register({
             name = "Terminal",
             -- t = { "<cmd>lua ToggleTerm<CR>", "Terminal" },
             f = { "<cmd>lua TermfloatToggle()<CR>", "Terminal Float" },
-            d = { "<cmd>lua require('nvim-dap-projects').search_project_config()<CR>", "Load Dap Projects" },
-            D = { "<cmd>lua _lazydocker_toggle()<CR>", "Lazy Docker" },
+            D = { "<cmd>lua require('nvim-dap-projects').search_project_config()<CR>", "Load Dap Projects" },
+            d = { "<cmd>lua LazydockerToggle()<CR>", "Lazy Docker" },
         },
 
     },
