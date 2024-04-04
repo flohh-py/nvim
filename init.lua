@@ -24,6 +24,7 @@ vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.o.timeout = true
 vim.o.timeoutlen = 300
+vim.o.wrap = false
 vim.wo.signcolumn = 'yes'
 
 ------------------------------------
