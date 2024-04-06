@@ -86,6 +86,8 @@ require('lazy').setup({
                     { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
                 vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk,
                     { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
+                vim.keymap.set('n', '<leader>gb', require('gitsigns').blame_line,
+                    { buffer = bufnr, desc = '[G]it [B]lame Line' })
                 vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk,
                     { buffer = bufnr, desc = '[P]review [H]unk' })
             end,
@@ -245,6 +247,13 @@ require('lazy').setup({
             require('configs.harpoon')
         end,
     },
+    {
+        "ahmedkhalf/project.nvim",
+        lazy = false,
+        config = function()
+            require("configs.project")
+        end
+    },
     -- THEMES
     {
         "EdenEast/nightfox.nvim",
@@ -262,6 +271,9 @@ require('lazy').setup({
     },
 
     --- TESTING
+    -- {'Shatur/neovim-session-manager'}
+    -- {'nvim-telescope/telescope-ui-select.nvim' }
+    --
     -- { "natecraddock/workspaces.nvim" },
     -- {"idanarye/nvim-buffls"},
     -- {"AckslD/muren.nvim"},
