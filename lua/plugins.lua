@@ -254,6 +254,14 @@ require('lazy').setup({
             require("configs.project")
         end
     },
+    {
+        'goolord/alpha-nvim',
+        lazy = false,
+        -- event = "VimEnter",
+        config = function()
+            require("configs.alpha")
+        end
+    },
     -- THEMES
     {
         "EdenEast/nightfox.nvim",
