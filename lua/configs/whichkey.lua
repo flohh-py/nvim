@@ -13,7 +13,7 @@ wk.register({
                     }
                 end,
                 "Search Text in Workspaces",
-            }
+            },
             R = { "<cmd>Telescope registers<cr>", "Register" },
         },
         g = {
