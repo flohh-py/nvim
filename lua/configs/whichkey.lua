@@ -2,7 +2,7 @@ local wk = require("which-key")
 
 wk.register({
         s = {
-            name = "Files",
+            name = "+ Search",
             f = { "<cmd>Telescope find_files<cr>", "Find File" },
             t = { "<cmd>Telescope live_grep<cr>", "Search Text" },
             T = {
@@ -14,16 +14,17 @@ wk.register({
                 end,
                 "Search Text in Workspaces",
             }
+            R = { "<cmd>Telescope registers<cr>", "Register" },
         },
         g = {
             name = "Git - Docker",
             g = { "<cmd>lua LazygitToggle()<cr>", "Lazygit" },
-            d = { "<cmd>lua LazydockerToggle()<cr>", "LazyDocker" },
         },
         e = { "<cmd>NvimTreeToggle<cr>", "NvimTree" },
         b = {
-            name = "Buffers",
+            name = "+ Buffers",
             l = { "<cmd>Telescope buffers previewer=false<cr>", "List Buffers" },
+            -- l = { "<cmd>Telescope buffers<cr>", "List Buffers" },
             c = { "<cmd>BufDel <cr>", "Close Buffer" },
             a = { "<cmd>BufDelOthers <cr>:<cr>", "Close Others Buffers" },
         },
@@ -62,7 +63,7 @@ wk.register({
         },
         -- WIP
         t = {
-            name = "+ Terminal",
+            name = "+ Tools",
             t = { "<cmd>lua TermhorizontalToggle()<CR>", "Terminal" },
             f = { "<cmd>lua TermfloatToggle()<CR>", "Terminal Float" },
             D = { "<cmd>lua require('nvim-dap-projects').search_project_config()<CR>", "Load Dap Projects" },
