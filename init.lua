@@ -39,10 +39,3 @@ vim.g.neovide_cursor_animation_length = 0.15
 vim.g.neovide_cursor_trail_size = 0.5
 vim.g.neovide_cursor_antialiasing = true
 vim.g.neovide_cursor_vfx_mode = "railgun"
-
-
-------------------------------------
--- DASHBOARD
-------------------------------------
-
--- vim.cmd [[Alpha]]

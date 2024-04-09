@@ -58,26 +58,20 @@ cmp.setup({
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' },
-        -- {
-        --     name = 'nvim_lsp',
-        --     entry_filter = function(entry)
-        --         return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
-        --     end
-        -- },
     }
 })
 
--- cmp.setup.filetype('gitcommit', {
---     sources = cmp.config.sources({
---             { name = 'cmp_git' }, },
---         {
---             { name = 'buffer' },
---         })
--- })
---
--- cmp.setup.cmdline({ '/', '?' }, {
---     mapping = cmp.mapping.preset.cmdline(),
---     sources = {
---         { name = 'buffer' }
---     }
--- })
+cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+            { name = 'cmp_git' }, },
+        {
+            { name = 'buffer' },
+        })
+})
+
+cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})
