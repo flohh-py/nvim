@@ -3,6 +3,7 @@ require 'nvim-treesitter.configs'.setup {
     modules = {},
     ensure_installed = {
         "typescript",
+        "vue",
         "javascript",
         "html",
         "python",
@@ -15,7 +16,9 @@ require 'nvim-treesitter.configs'.setup {
         "markdown",
         "c",
         "vimdoc",
-        "markdown_inline"
+        "markdown_inline",
+        "dockerfile",
+        "sql"
     },
 
     sync_install = false,

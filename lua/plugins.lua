@@ -279,7 +279,9 @@ require('lazy').setup({
     },
 
     --- TESTING
+    -- {'tpope/vim-dadbod'}
     -- {'Shatur/neovim-session-manager'}
+    --
     -- {'nvim-telescope/telescope-ui-select.nvim' }
     --
     -- { "natecraddock/workspaces.nvim" },
