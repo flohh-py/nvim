@@ -196,13 +196,12 @@ require('lazy').setup({
         "ldelossa/nvim-dap-projects",
         lazy = false,
         -- event = '',
-        -- init = function()
-        --     require("nvim-dap-projects")
-        -- end,
+        init = function()
+            require("nvim-dap-projects")
+        end,
         config = function()
             require("nvim-dap-projects").config_paths = { "./test/nvim-dap.lua", ".vscode/nvim-dap.lua" }
-            -- FIXME:
-            -- require("nvim-dap-projects").search_project_config()
+            require("nvim-dap-projects").search_project_config()
         end,
     },
 
