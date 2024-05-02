@@ -1,6 +1,8 @@
 require('plugins')
 require('configs')
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.opt.guifont = "agave Nerd Font Mono:h16"
 vim.opt.number = true
