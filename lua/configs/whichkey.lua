@@ -27,6 +27,9 @@ wk.register({
             -- l = { "<cmd>Telescope buffers<cr>", "List Buffers" },
             c = { "<cmd>BufDel <cr>", "Close Buffer" },
             a = { "<cmd>BufDelOthers <cr>:<cr>", "Close Others Buffers" },
+            P = { "<cmd>BufferLinePick <cr>", "Pick Buffers" },
+            n = { "<cmd>BufferLineCycleNext <cr>", "Next Buffer" },
+            p = { "<cmd>BufferLineCyclePrev <cr>", "Previus Buffer" },
         },
         h = {
             name = "+ Harpoon",

@@ -204,14 +204,13 @@ require('lazy').setup({
             require("nvim-dap-projects").search_project_config()
         end,
     },
-
-    {
-        'TabbyML/vim-tabby',
-        lazy = false,
-        config = function()
-            require('configs.tabby')
-        end
-    },
+    -- {
+    --     'TabbyML/vim-tabby',
+    --     lazy = false,
+    --     config = function()
+    --         require('configs.tabby')
+    --     end
+    -- },
     {
         "folke/noice.nvim",
         event = "VeryLazy",
@@ -277,6 +276,15 @@ require('lazy').setup({
         --     vim.cmd [[colorscheme tokyonight-storm]]
         -- end,
     },
+    {
+        "akinsho/bufferline.nvim",
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require("configs.bufferline")
+        end,
+    }
+
 
     --- TESTING
     -- {'tpope/vim-dadbod'}
