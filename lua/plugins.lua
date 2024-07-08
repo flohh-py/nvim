@@ -284,8 +284,6 @@ require('lazy').setup({
             require("configs.bufferline")
         end,
     }
-
-
     --- TESTING
     -- {'tpope/vim-dadbod'}
     -- {'Shatur/neovim-session-manager'}
@@ -294,4 +292,5 @@ require('lazy').setup({
     -- {"idanarye/nvim-buffls"},
     -- {"AckslD/muren.nvim"},
     -- { 'jose-elias-alvarez/typescript.nvim' },
+    -- {"mg979/vim-visual-multi"}
 })
