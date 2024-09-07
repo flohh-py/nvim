@@ -12,6 +12,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
+    { 'echasnovski/mini.icons' },
     { 'tpope/vim-sleuth' },
     {
         'williamboman/mason.nvim',
