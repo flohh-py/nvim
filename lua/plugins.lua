@@ -64,14 +64,6 @@ require('lazy').setup({
         end
     },
     {
-        'folke/which-key.nvim',
-        lazy = false,
-        opts = {},
-        config = function()
-            require('configs.whichkey')
-        end
-    },
-    {
         'lewis6991/gitsigns.nvim',
         opts = {
             signs = {
@@ -283,6 +275,14 @@ require('lazy').setup({
         config = function()
             require("configs.bufferline")
         end,
+    },
+    {
+        'folke/which-key.nvim',
+        lazy = false,
+        opts = {},
+        config = function()
+            require('configs.whichkey')
+        end
     }
     --- TESTING
     -- {'tpope/vim-dadbod'}
