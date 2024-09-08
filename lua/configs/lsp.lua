@@ -96,7 +96,18 @@ lspconfig.lemminx.setup {
     single_file_support = true,
 }
 
-lspconfig.tsserver.setup {
+-- lspconfig.tsserver.setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     cmd = { "typescript-language-server", "--stdio" },
+--     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+--     init_option = {
+--         hostInfo = "neovim"
+--     },
+--     single_file_support = true,
+-- }
+
+lspconfig.ts_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
     cmd = { "typescript-language-server", "--stdio" },
