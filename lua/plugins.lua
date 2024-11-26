@@ -26,7 +26,7 @@ require('lazy').setup({
         lazy = false,
         config = function()
             require("mason-lspconfig").setup {
-                ensure_installed = { "lua_ls", "pyright", "tsserver", "lemminx", "cssls" },
+                ensure_installed = { "lua_ls", "pyright", "lemminx", "cssls", "yamlls" },
             }
         end
     },

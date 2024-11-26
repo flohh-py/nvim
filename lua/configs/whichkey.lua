@@ -63,7 +63,7 @@ wk.add(
         {
             "<leader>ha",
             function()
-                -- local harpoon = require("harpoon")
+                local harpoon = require("harpoon")
                 harpoon:list():append()
             end,
             desc = "Add Harpoon Marks"
@@ -71,7 +71,7 @@ wk.add(
         {
             "<leader>hl",
             function()
-                -- local harpoon = require("harpoon")
+                local harpoon = require("harpoon")
                 harpoon.ui:toggle_quick_menu(harpoon:list())
             end,
             desc = "List Harpoon Marks"
