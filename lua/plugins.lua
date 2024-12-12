@@ -204,25 +204,25 @@ require('lazy').setup({
     --         require('configs.tabby')
     --     end
     -- },
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        config = function()
-            require('configs.noice')
-        end,
-        opts = {
-            routes = {
-                {
-                    filter = { event = "notify", find = "No information available" },
-                    opts = { skip = true },
-                },
-            },
-        },
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
-        }
-    },
+    -- {
+    --     "folke/noice.nvim",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require('configs.noice')
+    --     end,
+    --     opts = {
+    --         routes = {
+    --             {
+    --                 filter = { event = "notify", find = "No information available" },
+    --                 opts = { skip = true },
+    --             },
+    --         },
+    --     },
+    --     dependencies = {
+    --         "MunifTanjim/nui.nvim",
+    --         "rcarriga/nvim-notify",
+    --     }
+    -- },
     {
         "hrsh7th/cmp-cmdline",
         lazy = true,
